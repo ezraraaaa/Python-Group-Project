@@ -54,7 +54,7 @@ def profitloss_function():
                     # calculate the difference
                     difference = prevProfit - currProfit
                     # printing & appending of deficit into the output file
-                    file.write(f"[PROFIT DEFICIT] DAY: " + str(profitsLoss[i][0]) + ", AMOUNT: USD" + str(difference))
+                    file.write(f"\n[PROFIT DEFICIT] DAY: " + str(profitsLoss[i][0]) + ", AMOUNT: USD" + str(difference))
                     print("[PROFIT DEFICIT] DAY: " + str(profitsLoss[i][0]) + ", AMOUNT: USD" + str(difference))
                 
                 # else if current profit is more than previous profit
@@ -73,5 +73,5 @@ def profitloss_function():
                 elif profitCount == len(profitsLoss) - 1:
                 
                     # print & append the net profit surplus, and the best profit surplus into the output file
-                    file.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n[HIGHEST NET PROFIT SURPLUS] DAY: " + str(bestProfitDay) + ", AMOUNT: " + str(bestProfit))
+                    file.write(f"\n[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n[HIGHEST NET PROFIT SURPLUS] DAY: " + str(bestProfitDay) + ", AMOUNT: " + str(bestProfit))
                     print("[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n[HIGHEST NET PROFIT SURPLUS] DAY: " + str(bestProfitDay) + ", AMOUNT: " + str(bestProfit))
