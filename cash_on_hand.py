@@ -23,5 +23,5 @@ def coh_function():
         # print(cp_list)  # just to check, can remove later
 
         # Calculate average closing price
-        avg_cp = sum(cp_list)/len(cp_list)
+        # avg_cp = sum(cp_list)/len(cp_list)
 
