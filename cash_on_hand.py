@@ -50,14 +50,14 @@ def coh_function():
                 ## The day and the amount of deficit will then be printed in a statement 
                 ## for each day cash deficit occurs.
                 elif diff < 0:
-                    # file.write(f"\n[CASH DEFICIT] DAY: {num + 1}, AMOUNT: USD{diff * -1}")
+                    file.write(f"\n[CASH DEFICIT] DAY: {num + 1}, AMOUNT: USD{diff * -1}")
                     print(f"[CASH DEFICIT] DAY: {num + 1}, AMOUNT: USD{diff * -1}")
                 
             ## Use of "if" condition
             ## If the length of surplus list is equal
             ## to the number of days(90), the statement would be printed
                 if len(surplus) == 90:  
-                    # file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+                    file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                     print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
             ## set of codes under the if condition will run if there are values in the surplus variable
                     if surplus:
