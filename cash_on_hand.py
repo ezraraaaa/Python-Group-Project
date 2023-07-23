@@ -9,22 +9,19 @@ fp = Path.cwd()/"CSV_Reports"/"Cash_on_Hand.csv"
 fp_write = Path.cwd()/"summary_report.txt"
 
 def coh_function():
-    ## open the csv to read the data in it
-    with fp.open(mode="r",encoding="UTF-8", newline="") as file:
-        reader = csv.reader(file)
-        ## skip the first row which is the header of the values
-        next(reader)
+        with fp.open(mode="r",encoding="UTF-8", newline="") as file:
+            reader = csv.reader(file)
+            ## skip the first row which is the header of the values
+            next(reader)
 
-        # created an empty list to input data in it
-        coh_list = []
+            # created an empty list to input data in it
+            coh_list = []
 
-        ## for loop is used append the data of the day and cash on hand values 
-        ## in each row into the empty list
-        for row in reader:
-            coh_list.append([int(row[0]),int(row[1])])
+            ## for loop is used append the data of the day and cash on hand values 
+            ## in each row into the empty list
+            for row in reader:
+                coh_list.append([int(row[0]),int(row[1])])
 
-# opening the file to append
-    with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
         ## a variable is assigned to a range from 0 to 90
         ## to represent the total number of days of the csv
         number_of_days = range(0,90)
@@ -52,23 +49,29 @@ def coh_function():
             ## The day and the amount of deficit will then be printed in a statement 
             ## for each day cash deficit occurs.
             elif diff < 0:
-                file.write(f"\n[CASH DEFICIT] DAY: {num + 1}, AMOUNT: USD{diff * -1}")
+                # file.write(f"\n[CASH DEFICIT] DAY: {num + 1}, AMOUNT: USD{diff * -1}")
                 print(f"[CASH DEFICIT] DAY: {num + 1}, AMOUNT: USD{diff * -1}")
             
         ## Use of "if" condition
         ## If the length of surplus list is equal
         ## to the number of days(90), the statement would be printed
             if len(surplus) == 90:  
-                file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+                # file.write(f"\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                 print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
         ## set of codes under the if condition will run if there are values in the surplus variable
                 if surplus:
         ## max() is used to find the highest amount in the surplus list
                     max_surplus = max(surplus)
-        ## To find the day in which the highest amount of surplus occurs 
-                    day_of_max_surplus = surplus.index(max_surplus) + 1
+                    # use enumerate to include a counter for each loop
+                    for count, num in enumerate(surplus):
+                        # loop will stop once value of surplus is the highest
+                        if num == max_surplus:
+                            break
+    
         ## Statement is printed to show the day with the highest cash surplus
         ## as well as the amount of cash surplus
-                    file.write(f"\n[HIGHEST CASH SURPLUS] DAY: {day_of_max_surplus}, AMOUNT: USD{max(surplus)}")
-                    print(f"[HIGHEST CASH SURPLUS] DAY: {day_of_max_surplus}, AMOUNT: USD{max(surplus)}")
+                    file.write(f"\n[HIGHEST CASH SURPLUS] DAY: {count + 1}, AMOUNT: USD{max(surplus)}")
+                    print(f"[HIGHEST CASH SURPLUS] DAY: {count + 1}, AMOUNT: USD{max(surplus)}")
+                
                     
+
