@@ -2,7 +2,7 @@ from pathlib import Path
 import csv
 
 # create a file to csv file.
-fp =Path.cwd()/"CSV_Reports"/"Cash_on_Hand.csv"
+fp =Path.cwd()/"CSV_Reports"/"Overheads.csv"
 fp_write = Path.cwd()/"summary_report.txt"
 
 def overheads_func():
@@ -26,5 +26,5 @@ def overheads_func():
 
     with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:            
     #print highest overhead and its corresponding name
-        file.write(f"[HIGHEST OVERHEAD] {name}: {largest}%")
+        file.write(f"\n[HIGHEST OVERHEAD] {name}: {largest}%")
         print(f"[HIGHEST OVERHEAD] {name}: {largest}%")
