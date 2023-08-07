@@ -6,7 +6,11 @@ fp =Path.cwd()/"CSV_Reports"/"Overheads.csv"
 fp_write = Path.cwd()/"summary_report.txt"
 
 def overheads_func():
-        
+    """
+    - Function calculates highest overhead in Overheads.csv
+    - No parameters required
+    - Function will be called in the main.py
+    """
     largest = 0
     name = ''
     # read the csv file to append profit and quantity from the csv.

@@ -9,6 +9,11 @@ import csv
 fp_read = Path.cwd()/"CSV_Reports"/"Profits_and_Loss.csv"
 
 def profitloss_function():
+    """
+    - Function calculates either surplus or deficit for profit and loss depending on the Profit_and_Loss.csv
+    - No parameters required
+    - Function will be called in the main.py
+    """
     fp_read = Path.cwd()/"CSV_Reports"/"Profits_and_Loss.csv"
     fp_write = Path.cwd()/"summary_report.txt"
     fp_write.touch()

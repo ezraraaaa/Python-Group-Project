@@ -9,6 +9,11 @@ fp = Path.cwd()/"CSV_Reports"/"Cash_on_Hand.csv"
 fp_write = Path.cwd()/"summary_report.txt"
 
 def coh_function():
+        """
+        - Function calculates either surplus or deficit for cash on hand depending on the Cash_on_Hand.csv 
+        - No parameters required
+        - Function will be called in the main.py
+        """
         with fp.open(mode="r",encoding="UTF-8", newline="") as file:
             reader = csv.reader(file)
             ## skip the first row which is the header of the values
